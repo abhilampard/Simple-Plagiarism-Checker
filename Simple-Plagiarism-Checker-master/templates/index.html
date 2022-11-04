@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      
+      
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      <link href = "{{url_for('static', filename = 'bootstrap.min.css' )}}" rel = "stylesheet">
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Plagiarism Checker </title>
+      <style>
+         .plag {
+            height: 80vh;
+            width: 80%;
+            background-color: #F5F5F5;
+            margin: auto;
+            border-radius: 20px;
+            margin-top: 30px;
+         }
+         .input {
+            padding-top: 3rem; 
+            color: black;
+            font-size: 30px;
+         }
+         .foot {
+            background-color: #585858 !important;
+         }
+         .text {
+            width: 50%;
+            border: none;
+         }
+         .check {
+            background-color: black;
+            color: wheat;
+            border-radius: 5px;
+            box-shadow: 3px 0 3px 3px gray;
+            padding: 10px;
+            font-weight: bold;
+         }
+         .check:hover {
+            transition: all 0.9s ease-out;
+            color: black;
+            background-color: wheat;
+         }
+      </style>
+      <body>
+         <div class="w3-top">
+             <!--<div class="w3-row w3-padding w3-black">-->
+               <div class="navbar navbar-dark bg-dark">
+                 <a href="#" class=" w3-block navbar-brand text-center color-dark mb-6 h6 head" style="text-decoration: none;">PLAGIARISM CHECKER</a>
+               </div>
+             </div>
+         <br>
+         <img src="{{url_for('static', filename = 'plag1.png')}}" class="w3-image vh-100 vw-100 img-fluid" alt="Responsive image"><br>
+         <section class="plag">
+      <form action="http://localhost:5000" method="POST" class="text-center">
+         <p class="input">Enter Your Text : </p>
+         <p><textarea name="query" rows="8" cols="50" autofocus class="text">{{query}}</textarea></p>
+         <br>
+         <p><input type="submit" name="submit" class="check" value="CHECK PLAGIARISM"></p>
+         <br>
+         <p><h3>{{output}}</h3></p>
+      </form>
+   </section>
+   </body>
+   <b><footer class="w3-container w3-padding-24 w3-center w3-opacity bg-white foot">
+      <p style="color: whitesmoke;">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" style="color: rgb(235, 208, 71);">Plagiarism Checker</a></p>
+   </footer></b>
+</html>
